@@ -1,5 +1,13 @@
 package ru.netology.javaqa.javaqamvn.oopclasses;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Data;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private int currentStation;
     private int currentVolume;
@@ -9,19 +17,11 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 100;
 
+
     public Radio(int sumStation) {
         this.maxStation = sumStation - 1;
     }
 
-    public Radio() {
-        this.maxStation = 9;
-
-    }
-
-
-    public int getCurrentStation() {
-        return currentStation;
-    }
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < minStation) {
@@ -47,10 +47,6 @@ public class Radio {
         } else {
             currentStation = maxStation;
         }
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
